@@ -1,0 +1,8 @@
+2018-06-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/emaWrapper.cpp: EMA functions
+	* man/EMAnext.Rd: Documentation
+
+2018-06-04  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/test.cpp: Initial commit with original example

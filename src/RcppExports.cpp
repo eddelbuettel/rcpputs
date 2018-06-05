@@ -5,6 +5,45 @@
 
 using namespace Rcpp;
 
+// EMAnext
+Rcpp::NumericVector EMAnext(Rcpp::DatetimeVector times, Rcpp::NumericVector values, const double tau);
+RcppExport SEXP _RcppUTS_EMAnext(SEXP timesSEXP, SEXP valuesSEXP, SEXP tauSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::DatetimeVector >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type values(valuesSEXP);
+    Rcpp::traits::input_parameter< const double >::type tau(tauSEXP);
+    rcpp_result_gen = Rcpp::wrap(EMAnext(times, values, tau));
+    return rcpp_result_gen;
+END_RCPP
+}
+// EMAlast
+Rcpp::NumericVector EMAlast(Rcpp::DatetimeVector times, Rcpp::NumericVector values, const double tau);
+RcppExport SEXP _RcppUTS_EMAlast(SEXP timesSEXP, SEXP valuesSEXP, SEXP tauSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::DatetimeVector >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type values(valuesSEXP);
+    Rcpp::traits::input_parameter< const double >::type tau(tauSEXP);
+    rcpp_result_gen = Rcpp::wrap(EMAlast(times, values, tau));
+    return rcpp_result_gen;
+END_RCPP
+}
+// EMAlinear
+Rcpp::NumericVector EMAlinear(Rcpp::DatetimeVector times, Rcpp::NumericVector values, const double tau);
+RcppExport SEXP _RcppUTS_EMAlinear(SEXP timesSEXP, SEXP valuesSEXP, SEXP tauSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::DatetimeVector >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type values(valuesSEXP);
+    Rcpp::traits::input_parameter< const double >::type tau(tauSEXP);
+    rcpp_result_gen = Rcpp::wrap(EMAlinear(times, values, tau));
+    return rcpp_result_gen;
+END_RCPP
+}
 // main_example
 int main_example();
 RcppExport SEXP _RcppUTS_main_example() {
@@ -17,6 +56,9 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_RcppUTS_EMAnext", (DL_FUNC) &_RcppUTS_EMAnext, 3},
+    {"_RcppUTS_EMAlast", (DL_FUNC) &_RcppUTS_EMAlast, 3},
+    {"_RcppUTS_EMAlinear", (DL_FUNC) &_RcppUTS_EMAlinear, 3},
     {"_RcppUTS_main_example", (DL_FUNC) &_RcppUTS_main_example, 0},
     {NULL, NULL, 0}
 };
