@@ -44,14 +44,55 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// main_example
-int main_example();
-RcppExport SEXP _RcppUTS_main_example() {
+// SMAnext
+Rcpp::NumericVector SMAnext(Rcpp::DatetimeVector times, Rcpp::NumericVector values, const double widthbefore, const double widthafter);
+RcppExport SEXP _RcppUTS_SMAnext(SEXP timesSEXP, SEXP valuesSEXP, SEXP widthbeforeSEXP, SEXP widthafterSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(main_example());
+    Rcpp::traits::input_parameter< Rcpp::DatetimeVector >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type values(valuesSEXP);
+    Rcpp::traits::input_parameter< const double >::type widthbefore(widthbeforeSEXP);
+    Rcpp::traits::input_parameter< const double >::type widthafter(widthafterSEXP);
+    rcpp_result_gen = Rcpp::wrap(SMAnext(times, values, widthbefore, widthafter));
     return rcpp_result_gen;
+END_RCPP
+}
+// SMAlast
+Rcpp::NumericVector SMAlast(Rcpp::DatetimeVector times, Rcpp::NumericVector values, const double widthbefore, const double widthafter);
+RcppExport SEXP _RcppUTS_SMAlast(SEXP timesSEXP, SEXP valuesSEXP, SEXP widthbeforeSEXP, SEXP widthafterSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::DatetimeVector >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type values(valuesSEXP);
+    Rcpp::traits::input_parameter< const double >::type widthbefore(widthbeforeSEXP);
+    Rcpp::traits::input_parameter< const double >::type widthafter(widthafterSEXP);
+    rcpp_result_gen = Rcpp::wrap(SMAlast(times, values, widthbefore, widthafter));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SMAlinear
+Rcpp::NumericVector SMAlinear(Rcpp::DatetimeVector times, Rcpp::NumericVector values, const double widthbefore, const double widthafter);
+RcppExport SEXP _RcppUTS_SMAlinear(SEXP timesSEXP, SEXP valuesSEXP, SEXP widthbeforeSEXP, SEXP widthafterSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::DatetimeVector >::type times(timesSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type values(valuesSEXP);
+    Rcpp::traits::input_parameter< const double >::type widthbefore(widthbeforeSEXP);
+    Rcpp::traits::input_parameter< const double >::type widthafter(widthafterSEXP);
+    rcpp_result_gen = Rcpp::wrap(SMAlinear(times, values, widthbefore, widthafter));
+    return rcpp_result_gen;
+END_RCPP
+}
+// utsExample
+void utsExample();
+RcppExport SEXP _RcppUTS_utsExample() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    utsExample();
+    return R_NilValue;
 END_RCPP
 }
 
@@ -59,7 +100,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_RcppUTS_EMAnext", (DL_FUNC) &_RcppUTS_EMAnext, 3},
     {"_RcppUTS_EMAlast", (DL_FUNC) &_RcppUTS_EMAlast, 3},
     {"_RcppUTS_EMAlinear", (DL_FUNC) &_RcppUTS_EMAlinear, 3},
-    {"_RcppUTS_main_example", (DL_FUNC) &_RcppUTS_main_example, 0},
+    {"_RcppUTS_SMAnext", (DL_FUNC) &_RcppUTS_SMAnext, 4},
+    {"_RcppUTS_SMAlast", (DL_FUNC) &_RcppUTS_SMAlast, 4},
+    {"_RcppUTS_SMAlinear", (DL_FUNC) &_RcppUTS_SMAlinear, 4},
+    {"_RcppUTS_utsExample", (DL_FUNC) &_RcppUTS_utsExample, 0},
     {NULL, NULL, 0}
 };
 

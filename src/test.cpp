@@ -31,10 +31,17 @@ void print_uts(double values[], double times[], int n)
 }
 
 
-// Demo of functionality
+//' The UTS library by Andreas Eckner provides algorithms for unevenly
+//' spaced time-series data.  This package brings a few of them to R.
+//' This function shows the original example.
+//' @title Irregularly spaced time series example
+//' @return Nothing
+//' @author Dirk Eddelbuettel for the package, Andreas Eckner for the
+//' underlying code.
+//' @examples
+//' utsExample()
 // [[Rcpp::export]]
-int main_example()
-{
+void utsExample() {
   // Define sample time series
   double values[] = {0, 2, 4, 6, 8, 10};
   double times[] = {0, 1, 1.2, 2.3, 2.9, 5};
@@ -105,7 +112,7 @@ int main_example()
 
   // SMA with last-point interpolation
   sma_last(values, times, &n, out, &width_before, &width_after);
-  printf("\nSMA_last(X, %.1f, %.1f)\n", width_before, width_after);
+  Rprintf("\nSMA_last(X, %.1f, %.1f)\n", width_before, width_after);
   print_uts(out, times, n);
   
   // SMA with next-point interpolation
@@ -115,7 +122,7 @@ int main_example()
 
   // SMA with linear interpolation
   sma_linear(values, times, &n, out, &width_before, &width_after);
-  printf("\nSMA_linear(X, %.1f, %.1f)\n", width_before, width_after);
+  Rprintf("\nSMA_linear(X, %.1f, %.1f)\n", width_before, width_after);
   print_uts(out, times, n);
   
   // SMA with slow time decay
@@ -127,7 +134,7 @@ int main_example()
   /*
     Explonential Moving Averages (EMAs)
   */
-  printf("\n\n##### Exponential Moving Averages (EMAs) #####\n");
+  Rprintf("\n\n##### Exponential Moving Averages (EMAs) #####\n");
 
   // EMA with last-point interpolation
   ema_last(values, times, &n, out, &tau);
@@ -152,5 +159,5 @@ int main_example()
   // Wait for key pressed before exiting
   //printf("\nPress <ENTER> to exit the program.\n");
   //getchar();
-  return 0;
+  //return 0;
 }

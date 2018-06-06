@@ -2,7 +2,7 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' The UTS library by Andreas Eckner provides algorithms for unevenly
-#' sampled time-series data.  This package brings a few of them to R;
+#' spaced time-series data.  This package brings a few of them to R;
 #' and these functions offer exponentially-decaying weighted moving
 #' average, or EMA, for short. Three variants are provides considering
 #' the last or next observation relative to time \sQuote{t}, as well as
@@ -35,7 +35,51 @@ EMAlinear <- function(times, values, tau) {
     .Call(`_RcppUTS_EMAlinear`, times, values, tau)
 }
 
-main_example <- function() {
-    .Call(`_RcppUTS_main_example`)
+#' The UTS library by Andreas Eckner provides algorithms for unevenly
+#' spaced time-series data.  This package brings a few of them to R;
+#' and these functions offer exponentially-decaying weighted moving
+#' average, or SMA, for short. Three variants are provides considering
+#' the last or next observation relative to time \sQuote{t}, as well as
+#' linear interpolation between them.
+#' @title SMA functions for irregularly samples time series
+#' @param times A Datetime vector
+#' @param values A numeric vector
+#' @param widthbefore A double with the preceding observation width
+#' @param widthafter gvA double with the subsequent observation width
+#' @return A numeric vector with SMA-weighted values.
+#' package at the given position is available.
+#' @author Dirk Eddelbuettel for the package, Andreas Eckner for the
+#' underlying code.
+#' @examples
+#' tt <- Sys.time() + c(0, 0.2, 1.2, 2.3)
+#' vv <- 0:3
+#' SMAnext(tt, vv, 2.5, 1.5)
+#' SMAlast(tt, vv, 2.5, 1.5)
+#' SMAlinear(tt, vv, 2.5, 1.5)
+SMAnext <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_SMAnext`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname SMAnext
+SMAlast <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_SMAlast`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname SMAnext
+SMAlinear <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_SMAlinear`, times, values, widthbefore, widthafter)
+}
+
+#' The UTS library by Andreas Eckner provides algorithms for unevenly
+#' spaced time-series data.  This package brings a few of them to R.
+#' This function shows the original example.
+#' @title Irregularly spaced time series example
+#' @return Nothing
+#' @author Dirk Eddelbuettel for the package, Andreas Eckner for the
+#' underlying code.
+#' @examples
+#' utsExample()
+utsExample <- function() {
+    invisible(.Call(`_RcppUTS_utsExample`))
 }
 

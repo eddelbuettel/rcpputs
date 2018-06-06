@@ -1,11 +1,11 @@
 Package: RcppUTS
 Type: Package
-Title: Rcpp Bindings for Algorithms for Irregularly Sampled Timeseries
+Title: Rcpp Bindings for Algorithms for Unevenly Spaced Time Series
 Version: 0.0.1
 Date: 2018-06-04
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
-Description: Algorithms and operators for irregularly-sampled time series are provided
+Description: Algorithms and operators for unevenly-spaced time series are provided
  based on the 'UTS' library by Andreas Eckner.
 License: GPL (>= 2)
 Imports: Rcpp (>= 0.12.17)

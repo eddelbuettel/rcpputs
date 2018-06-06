@@ -1,0 +1,6 @@
+local
+.travis.yml
+.git
+^.*\.Rproj$
+^\.Rproj\.user$
+^.*\.tar\.gz$
