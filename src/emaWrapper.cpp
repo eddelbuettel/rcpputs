@@ -5,12 +5,12 @@ extern "C" {
 }
 
 //' The UTS library by Andreas Eckner provides algorithms for unevenly
-//' spaced time-series data.  This package brings a few of them to R;
-//' and these functions offer exponentially-decaying weighted moving
+//' spaced time-series data.  This package brings a few of them to R.
+//' The functions describe here offer exponentially-decaying weighted moving
 //' average, or EMA, for short. Three variants are provides considering
 //' the last or next observation relative to time \sQuote{t}, as well as
 //' linear interpolation between them.
-//' @title EMA functions for irregularly samples time series
+//' @title EMA functions for unevenly spaced time series
 //' @param times A Datetime vector
 //' @param values A numeric vector
 //' @param tau A double with the decay factor

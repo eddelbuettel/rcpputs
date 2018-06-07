@@ -2,12 +2,12 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' The UTS library by Andreas Eckner provides algorithms for unevenly
-#' spaced time-series data.  This package brings a few of them to R;
-#' and these functions offer exponentially-decaying weighted moving
+#' spaced time-series data.  This package brings a few of them to R.
+#' The functions describe here offer exponentially-decaying weighted moving
 #' average, or EMA, for short. Three variants are provides considering
 #' the last or next observation relative to time \sQuote{t}, as well as
 #' linear interpolation between them.
-#' @title EMA functions for irregularly samples time series
+#' @title EMA functions for unevenly spaced time series
 #' @param times A Datetime vector
 #' @param values A numeric vector
 #' @param tau A double with the decay factor
@@ -36,12 +36,78 @@ EMAlinear <- function(times, values, tau) {
 }
 
 #' The UTS library by Andreas Eckner provides algorithms for unevenly
-#' spaced time-series data.  This package brings a few of them to R;
-#' and these functions offer exponentially-decaying weighted moving
+#' spaced time-series data.  This package brings a few of them to R.
+#' The functions describe here offer various rolling operators.
+#' @title Rolling operations functions for irregularly spaced time series
+#' @param times A Datetime vector
+#' @param values A numeric vector
+#' @param widthbefore A double with the preceding observation width
+#' @param widthafter A double with the subsequent observation width
+#' @param moment A double with the requested moment.
+#' @return A numeric vector with the corresponding result.
+#' @author Dirk Eddelbuettel for the package, Andreas Eckner for the
+#' underlying code.
+rollingCentralMoment <- function(times, values, widthbefore, widthafter, moment) {
+    .Call(`_RcppUTS_rollingCentralMoment`, times, values, widthbefore, widthafter, moment)
+}
+
+#' @rdname rollingCentralMoment
+rollingMax <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingMax`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname rollingCentralMoment
+rollingMean <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingMean`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname rollingCentralMoment
+rollingMedian <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingMedian`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname rollingCentralMoment
+rollingMin <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingMin`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname rollingCentralMoment
+rollingNobs <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingNobs`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname rollingCentralMoment
+rollingProduct <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingProduct`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname rollingCentralMoment
+rollingSD <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingSD`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname rollingCentralMoment
+rollingSum <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingSum`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname rollingCentralMoment
+rollingSumStable <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingSumStable`, times, values, widthbefore, widthafter)
+}
+
+#' @rdname rollingCentralMoment
+rollingVar <- function(times, values, widthbefore, widthafter) {
+    .Call(`_RcppUTS_rollingVar`, times, values, widthbefore, widthafter)
+}
+
+#' The UTS library by Andreas Eckner provides algorithms for unevenly
+#' spaced time-series data.  This package brings a few of them to R.
+#' The functions describe here offer simple moving
 #' average, or SMA, for short. Three variants are provides considering
 #' the last or next observation relative to time \sQuote{t}, as well as
 #' linear interpolation between them.
-#' @title SMA functions for irregularly samples time series
+#' @title SMA functions for unevenly spaced time series
 #' @param times A Datetime vector
 #' @param values A numeric vector
 #' @param widthbefore A double with the preceding observation width

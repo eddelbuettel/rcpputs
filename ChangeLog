@@ -1,3 +1,12 @@
+2018-06-06  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/rollingWrapper.cpp: Rolling functions
+	* man/rollingCentralMoment.Rd: Documentation
+
+	* README.md: Added
+	* rcpputs.Rproj: Added
+	* .travis.yml: Added
+
 2018-06-05  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/emaWrapper.cpp: EMA functions

@@ -4,7 +4,7 @@
 \alias{SMAnext}
 \alias{SMAlast}
 \alias{SMAlinear}
-\title{SMA functions for irregularly samples time series}
+\title{SMA functions for unevenly spaced time series}
 \usage{
 SMAnext(times, values, widthbefore, widthafter)
 
@@ -27,8 +27,8 @@ package at the given position is available.
 }
 \description{
 The UTS library by Andreas Eckner provides algorithms for unevenly
-spaced time-series data.  This package brings a few of them to R;
-and these functions offer exponentially-decaying weighted moving
+spaced time-series data.  This package brings a few of them to R.
+The functions describe here offer simple moving
 average, or SMA, for short. Three variants are provides considering
 the last or next observation relative to time \sQuote{t}, as well as
 linear interpolation between them.
