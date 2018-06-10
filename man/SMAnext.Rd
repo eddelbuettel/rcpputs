@@ -34,11 +34,22 @@ the last or next observation relative to time \sQuote{t}, as well as
 linear interpolation between them.
 }
 \examples{
-tt <- Sys.time() + c(0, 0.2, 1.2, 2.3)
-vv <- 0:3
-SMAnext(tt, vv, 2.5, 1.5)
-SMAlast(tt, vv, 2.5, 1.5)
-SMAlinear(tt, vv, 2.5, 1.5)
+if (requireNamespace("xts", quietly=TRUE)) {
+    suppressMessages(library(xts))
+    times <- ISOdatetime(2018, 6, 7, 8, 30, 0) + c(0, 1.0, 1.2, 2.3, 2.9, 5.0)
+    values <- seq(0, 10, by=2)
+    plot(xts(values, order.by=times), type="b",
+         main="Series and last/next/linear SMAs")
+    lines(xts(SMAlast(times,values, 2.5, 1), values, order.by=times), 
+         type="b", col="lightblue")
+    lines(xts(SMAnext(times,values, 2.5, 1),  values, order.by=times),
+         type="b", col="darkblue")
+    lines(xts(SMAlinear(times,values, 2.5, 1),  values, order.by=times),
+         type="b", col="mediumblue")
+    addLegend("topleft", legend.names=c("series", "SMAlast", "SMAnext", "SMAlinear"),
+              lty=rep(1,4), lwd=rep(1,4),
+              col=c("black", "lightblue", "darkblue", "mediumblue"))
+}
 }
 \author{
 Dirk Eddelbuettel for the package, Andreas Eckner for the

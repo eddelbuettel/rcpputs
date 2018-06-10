@@ -1,3 +1,16 @@
+2018-06-10  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/emaWrapper.cpp: Update example
+	* man/EMAnext.Rd: Idem
+
+	* src/smaWrapper.cpp: Update example
+	* man/SMAnext.Rd: Idem
+
+	* .travis.yml (install): Install suggested package xts as needed
+	for examples
+
+	* README.md: Added examples
+
 2018-06-06  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/rollingWrapper.cpp: Rolling functions

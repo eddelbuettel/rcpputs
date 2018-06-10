@@ -10,4 +10,5 @@ Description: Algorithms and operators for unevenly-spaced time series are provid
 License: GPL (>= 2)
 Imports: Rcpp (>= 0.12.17)
 LinkingTo: Rcpp
+Suggests: xts
 RoxygenNote: 6.0.1
