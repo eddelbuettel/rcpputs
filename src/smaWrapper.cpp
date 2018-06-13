@@ -25,7 +25,8 @@ extern "C" {
 //'     times <- ISOdatetime(2018, 6, 7, 8, 30, 0) + c(0, 1.0, 1.2, 2.3, 2.9, 5.0)
 //'     values <- seq(0, 10, by=2)
 //'     plot(xts(values, order.by=times), type="b",
-//'          main="Series and last/next/linear SMAs")
+//'          main="Series and last/next/linear SMAs",
+//'          major.ticks="auto", grid.ticks.on="auto")
 //'     lines(xts(SMAlast(times,values, 2.5, 1), values, order.by=times), 
 //'          type="b", col="lightblue")
 //'     lines(xts(SMAnext(times,values, 2.5, 1),  values, order.by=times),

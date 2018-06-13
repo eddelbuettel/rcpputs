@@ -1,3 +1,11 @@
+2018-06-13  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/emaWrapper.cpp: Update plot.txt in example
+	* man/EMAnext.Rd: Idem
+
+	* src/smaWrapper.cpp: Update example
+	* man/SMAnext.Rd: Idem
+
 2018-06-10  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/emaWrapper.cpp: Update example

@@ -37,7 +37,8 @@ if (requireNamespace("xts", quietly=TRUE)) {
     times <- ISOdatetime(2010, 1, 2, 8, 30, 0) + c(0, 1.0, 1.2, 2.3, 2.9, 5.0)
     values <- seq(0, 10, by=2)
     plot(xts(values, order.by=times), type="b",
-         main="Series and last/next/linear EMAs")
+         main="Series and last/next/linear EMAs",
+         major.ticks="auto", grid.ticks.on="auto")
     lines(xts(EMAlast(times,values, 1),  values, order.by=times),
           type="b", col="lightblue")
     lines(xts(EMAnext(times,values, 1),  values, order.by=times),
